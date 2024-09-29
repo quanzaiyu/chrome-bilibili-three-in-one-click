@@ -1,0 +1,30 @@
+{
+	"manifest_version": 3,
+	"name": "B站一键三连",
+	"version": "1.0",
+	"description": "在B站视频页面实现一键三连功能",
+	"permissions": [
+		"activeTab"
+	],
+	"action": {
+		"default_popup": "popup.html",
+		"default_icon": {
+			"128": "icon.svg"
+		}
+	},
+	"content_scripts": [
+		{
+			"matches": [
+				"*://*.bilibili.com/*",
+				"*://bilibili.com/*"
+			],
+			"js": [
+				"content.js"
+			],
+			"run_at": "document_idle"
+		}
+	],
+	"icons": {
+		"128": "icon.svg"
+	}
+}
